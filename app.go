@@ -3,6 +3,7 @@ package main
 import (
 	"encoding/json"
 	"fmt"
+	"log"
 	"maraki/scrapper"
 	"net/http"
 	"strconv"
@@ -199,6 +200,10 @@ func main() {
 	// ver filme ao mandar o link do player em: ?url=urlencode link
 	routes.HandleFunc("/filme/{id}/ver", HandlerAssistirFilme)
 
-	fmt.Println("Webservice...")
-	http.ListenAndServe(":80", routes)
+	// fmt.Println("Webservice...")
+	// http.ListenAndServe(":80", routes)
+
+	port := "8080" // Porta padrão para Railway
+	fmt.Printf("Server starting on port %s...\n", port)
+	log.Fatal(http.ListenAndServe(":"+port, routes))
 }
