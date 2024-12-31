@@ -16,7 +16,7 @@ var routes = mux.NewRouter()
 
 // manipular de acesso
 func ValidarRequisicao(c *http.Request) bool {
-	return c.Header.Get("maraki") == "online.helio3.maraki"
+	return c.Header.Get("maraki") == "online.helio3.marakitv"
 }
 
 // handlers das rotas
