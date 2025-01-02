@@ -23,6 +23,10 @@ func ValidarRequisicao(c *http.Request) bool {
 func HandlerIndex(w http.ResponseWriter, c *http.Request) {
 	// para a pagina inicial do site
 	w.Header().Set("Content-Type", "application/json")
+	// Adiciona os cabeçalhos de CORS
+	w.Header().Set("Access-Control-Allow-Origin", "http://localhost:8000") // Altere para o domínio necessário
+	w.Header().Set("Access-Control-Allow-Methods", "GET, POST, OPTIONS, PUT, DELETE")
+	w.Header().Set("Access-Control-Allow-Headers", "Content-Type, Authorization")
 
 	// validar
 	if !ValidarRequisicao(c) {
@@ -34,6 +38,10 @@ func HandlerIndex(w http.ResponseWriter, c *http.Request) {
 func HandlerFilmes(w http.ResponseWriter, c *http.Request) {
 	// para a pagina filmes
 	w.Header().Set("Content-Type", "application/json")
+	// Adiciona os cabeçalhos de CORS
+	w.Header().Set("Access-Control-Allow-Origin", "http://localhost:8000") // Altere para o domínio necessário
+	w.Header().Set("Access-Control-Allow-Methods", "GET, POST, OPTIONS, PUT, DELETE")
+	w.Header().Set("Access-Control-Allow-Headers", "Content-Type, Authorization")
 
 	// validar
 	if !ValidarRequisicao(c) {
@@ -54,6 +62,10 @@ func HandlerFilmes(w http.ResponseWriter, c *http.Request) {
 func HandlerSeries(w http.ResponseWriter, c *http.Request) {
 	// para a pagina de series
 	w.Header().Set("Content-Type", "application/json")
+	// Adiciona os cabeçalhos de CORS
+	w.Header().Set("Access-Control-Allow-Origin", "http://localhost:8000") // Altere para o domínio necessário
+	w.Header().Set("Access-Control-Allow-Methods", "GET, POST, OPTIONS, PUT, DELETE")
+	w.Header().Set("Access-Control-Allow-Headers", "Content-Type, Authorization")
 
 	// validar
 	if !ValidarRequisicao(c) {
@@ -74,6 +86,11 @@ func HandlerSeries(w http.ResponseWriter, c *http.Request) {
 func HandlerListarCategoria(w http.ResponseWriter, c *http.Request) {
 	// para algum categoria escolhido
 	w.Header().Set("Content-Type", "application/json")
+	// Adiciona os cabeçalhos de CORS
+	w.Header().Set("Access-Control-Allow-Origin", "http://localhost:8000") // Altere para o domínio necessário
+	w.Header().Set("Access-Control-Allow-Methods", "GET, POST, OPTIONS, PUT, DELETE")
+	w.Header().Set("Access-Control-Allow-Headers", "Content-Type, Authorization")
+	
 	// validar
 	if !ValidarRequisicao(c) {
 		json.NewEncoder(w).Encode(map[string]string{"error": "invalid resquest"})
@@ -84,6 +101,11 @@ func HandlerListarCategoria(w http.ResponseWriter, c *http.Request) {
 func HandlerPesquisa(w http.ResponseWriter, c *http.Request) {
 	// para coisas pesquisadas
 	w.Header().Set("Content-Type", "application/json")
+	// Adiciona os cabeçalhos de CORS
+	w.Header().Set("Access-Control-Allow-Origin", "http://localhost:8000") // Altere para o domínio necessário
+	w.Header().Set("Access-Control-Allow-Methods", "GET, POST, OPTIONS, PUT, DELETE")
+	w.Header().Set("Access-Control-Allow-Headers", "Content-Type, Authorization")
+	
 	// validar
 	if !ValidarRequisicao(c) {
 		json.NewEncoder(w).Encode(map[string]string{"error": "invalid resquest"})
@@ -94,6 +116,11 @@ func HandlerPesquisa(w http.ResponseWriter, c *http.Request) {
 func HandlerListarTemporada(w http.ResponseWriter, c *http.Request) {
 	// listar episodios de uma temporada
 	w.Header().Set("Content-Type", "application/json")
+	// Adiciona os cabeçalhos de CORS
+	w.Header().Set("Access-Control-Allow-Origin", "http://localhost:8000") // Altere para o domínio necessário
+	w.Header().Set("Access-Control-Allow-Methods", "GET, POST, OPTIONS, PUT, DELETE")
+	w.Header().Set("Access-Control-Allow-Headers", "Content-Type, Authorization")
+	
 
 	// validar
 	if !ValidarRequisicao(c) {
@@ -107,6 +134,11 @@ func HandlerListarTemporada(w http.ResponseWriter, c *http.Request) {
 func HandlerListarCategorias(w http.ResponseWriter, c *http.Request) {
 	// listar categorias
 	w.Header().Set("Content-Type", "application/json")
+	// Adiciona os cabeçalhos de CORS
+	w.Header().Set("Access-Control-Allow-Origin", "http://localhost:8000") // Altere para o domínio necessário
+	w.Header().Set("Access-Control-Allow-Methods", "GET, POST, OPTIONS, PUT, DELETE")
+	w.Header().Set("Access-Control-Allow-Headers", "Content-Type, Authorization")
+	
 	// validar
 	if !ValidarRequisicao(c) {
 		json.NewEncoder(w).Encode(map[string]string{"error": "invalid resquest"})
@@ -118,6 +150,10 @@ func HandlerListarCategorias(w http.ResponseWriter, c *http.Request) {
 func HandlerAbrirFilme(w http.ResponseWriter, c *http.Request) {
 	// retorna os links dos videos
 	w.Header().Set("Content-Type", "application/json")
+	// Adiciona os cabeçalhos de CORS
+	w.Header().Set("Access-Control-Allow-Origin", "http://localhost:8000") // Altere para o domínio necessário
+	w.Header().Set("Access-Control-Allow-Methods", "GET, POST, OPTIONS, PUT, DELETE")
+	w.Header().Set("Access-Control-Allow-Headers", "Content-Type, Authorization")
 
 	// validar
 	if !ValidarRequisicao(c) {
@@ -130,6 +166,11 @@ func HandlerAbrirFilme(w http.ResponseWriter, c *http.Request) {
 func HandlerAbrirSerie(w http.ResponseWriter, c *http.Request) {
 	// retorna os links dos videos
 	w.Header().Set("Content-Type", "application/json")
+	// Adiciona os cabeçalhos de CORS
+	w.Header().Set("Access-Control-Allow-Origin", "http://localhost:8000") // Altere para o domínio necessário
+	w.Header().Set("Access-Control-Allow-Methods", "GET, POST, OPTIONS, PUT, DELETE")
+	w.Header().Set("Access-Control-Allow-Headers", "Content-Type, Authorization")
+
 	// validar
 	if !ValidarRequisicao(c) {
 		json.NewEncoder(w).Encode(map[string]string{"error": "invalid resquest"})
@@ -142,6 +183,11 @@ func HandlerAbrirSerie(w http.ResponseWriter, c *http.Request) {
 func HandlerAssistirFilme(w http.ResponseWriter, c *http.Request) {
 	// retorna os links dos videos
 	w.Header().Set("Content-Type", "application/json")
+	// Adiciona os cabeçalhos de CORS
+	w.Header().Set("Access-Control-Allow-Origin", "http://localhost:8000") // Altere para o domínio necessário
+	w.Header().Set("Access-Control-Allow-Methods", "GET, POST, OPTIONS, PUT, DELETE")
+	w.Header().Set("Access-Control-Allow-Headers", "Content-Type, Authorization")
+
 	// validar
 	if !ValidarRequisicao(c) {
 		json.NewEncoder(w).Encode(map[string]string{"error": "invalid resquest"})
@@ -156,6 +202,11 @@ func HandlerAssistirFilme(w http.ResponseWriter, c *http.Request) {
 func HandlerAssistirEpisodio(w http.ResponseWriter, c *http.Request) {
 	// retorna os links de video do episodio
 	w.Header().Set("Content-Type", "application/json")
+	// Adiciona os cabeçalhos de CORS
+	w.Header().Set("Access-Control-Allow-Origin", "http://localhost:8000") // Altere para o domínio necessário
+	w.Header().Set("Access-Control-Allow-Methods", "GET, POST, OPTIONS, PUT, DELETE")
+	w.Header().Set("Access-Control-Allow-Headers", "Content-Type, Authorization")
+
 	// validar
 	if !ValidarRequisicao(c) {
 		json.NewEncoder(w).Encode(map[string]string{"error": "invalid resquest"})
@@ -163,6 +214,12 @@ func HandlerAssistirEpisodio(w http.ResponseWriter, c *http.Request) {
 		// retornar
 		json.NewEncoder(w).Encode(scrapper.GetSerieLinkVideo(mux.Vars(c)["episodio"]))
 	}
+}
+
+// Responde ao pré-flight request (OPTIONS)
+if r.Method == http.MethodOptions {
+	w.WriteHeader(http.StatusNoContent)
+	return
 }
 
 func main() {
