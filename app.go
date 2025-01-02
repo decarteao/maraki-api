@@ -28,6 +28,12 @@ func HandlerIndex(w http.ResponseWriter, c *http.Request) {
 	w.Header().Set("Access-Control-Allow-Methods", "GET, POST, OPTIONS, PUT, DELETE")
 	w.Header().Set("Access-Control-Allow-Headers", "Content-Type, Authorization")
 
+	// Responde ao pré-flight request (OPTIONS)
+	if c.Method == http.MethodOptions {
+		w.WriteHeader(http.StatusNoContent)
+		return
+	}
+
 	// validar
 	if !ValidarRequisicao(c) {
 		json.NewEncoder(w).Encode(map[string]string{"error": "invalid resquest"})
@@ -42,6 +48,12 @@ func HandlerFilmes(w http.ResponseWriter, c *http.Request) {
 	w.Header().Set("Access-Control-Allow-Origin", "http://localhost:8000") // Altere para o domínio necessário
 	w.Header().Set("Access-Control-Allow-Methods", "GET, POST, OPTIONS, PUT, DELETE")
 	w.Header().Set("Access-Control-Allow-Headers", "Content-Type, Authorization")
+
+	// Responde ao pré-flight request (OPTIONS)
+	if c.Method == http.MethodOptions {
+		w.WriteHeader(http.StatusNoContent)
+		return
+	}
 
 	// validar
 	if !ValidarRequisicao(c) {
@@ -67,6 +79,12 @@ func HandlerSeries(w http.ResponseWriter, c *http.Request) {
 	w.Header().Set("Access-Control-Allow-Methods", "GET, POST, OPTIONS, PUT, DELETE")
 	w.Header().Set("Access-Control-Allow-Headers", "Content-Type, Authorization")
 
+	// Responde ao pré-flight request (OPTIONS)
+	if c.Method == http.MethodOptions {
+		w.WriteHeader(http.StatusNoContent)
+		return
+	}
+
 	// validar
 	if !ValidarRequisicao(c) {
 		json.NewEncoder(w).Encode(map[string]string{"error": "invalid resquest"})
@@ -90,7 +108,13 @@ func HandlerListarCategoria(w http.ResponseWriter, c *http.Request) {
 	w.Header().Set("Access-Control-Allow-Origin", "http://localhost:8000") // Altere para o domínio necessário
 	w.Header().Set("Access-Control-Allow-Methods", "GET, POST, OPTIONS, PUT, DELETE")
 	w.Header().Set("Access-Control-Allow-Headers", "Content-Type, Authorization")
-	
+
+	// Responde ao pré-flight request (OPTIONS)
+	if c.Method == http.MethodOptions {
+		w.WriteHeader(http.StatusNoContent)
+		return
+	}
+
 	// validar
 	if !ValidarRequisicao(c) {
 		json.NewEncoder(w).Encode(map[string]string{"error": "invalid resquest"})
@@ -105,7 +129,13 @@ func HandlerPesquisa(w http.ResponseWriter, c *http.Request) {
 	w.Header().Set("Access-Control-Allow-Origin", "http://localhost:8000") // Altere para o domínio necessário
 	w.Header().Set("Access-Control-Allow-Methods", "GET, POST, OPTIONS, PUT, DELETE")
 	w.Header().Set("Access-Control-Allow-Headers", "Content-Type, Authorization")
-	
+
+	// Responde ao pré-flight request (OPTIONS)
+	if c.Method == http.MethodOptions {
+		w.WriteHeader(http.StatusNoContent)
+		return
+	}
+
 	// validar
 	if !ValidarRequisicao(c) {
 		json.NewEncoder(w).Encode(map[string]string{"error": "invalid resquest"})
@@ -120,7 +150,12 @@ func HandlerListarTemporada(w http.ResponseWriter, c *http.Request) {
 	w.Header().Set("Access-Control-Allow-Origin", "http://localhost:8000") // Altere para o domínio necessário
 	w.Header().Set("Access-Control-Allow-Methods", "GET, POST, OPTIONS, PUT, DELETE")
 	w.Header().Set("Access-Control-Allow-Headers", "Content-Type, Authorization")
-	
+
+	// Responde ao pré-flight request (OPTIONS)
+	if c.Method == http.MethodOptions {
+		w.WriteHeader(http.StatusNoContent)
+		return
+	}
 
 	// validar
 	if !ValidarRequisicao(c) {
@@ -138,7 +173,13 @@ func HandlerListarCategorias(w http.ResponseWriter, c *http.Request) {
 	w.Header().Set("Access-Control-Allow-Origin", "http://localhost:8000") // Altere para o domínio necessário
 	w.Header().Set("Access-Control-Allow-Methods", "GET, POST, OPTIONS, PUT, DELETE")
 	w.Header().Set("Access-Control-Allow-Headers", "Content-Type, Authorization")
-	
+
+	// Responde ao pré-flight request (OPTIONS)
+	if c.Method == http.MethodOptions {
+		w.WriteHeader(http.StatusNoContent)
+		return
+	}
+
 	// validar
 	if !ValidarRequisicao(c) {
 		json.NewEncoder(w).Encode(map[string]string{"error": "invalid resquest"})
@@ -154,6 +195,12 @@ func HandlerAbrirFilme(w http.ResponseWriter, c *http.Request) {
 	w.Header().Set("Access-Control-Allow-Origin", "http://localhost:8000") // Altere para o domínio necessário
 	w.Header().Set("Access-Control-Allow-Methods", "GET, POST, OPTIONS, PUT, DELETE")
 	w.Header().Set("Access-Control-Allow-Headers", "Content-Type, Authorization")
+
+	// Responde ao pré-flight request (OPTIONS)
+	if c.Method == http.MethodOptions {
+		w.WriteHeader(http.StatusNoContent)
+		return
+	}
 
 	// validar
 	if !ValidarRequisicao(c) {
@@ -171,6 +218,12 @@ func HandlerAbrirSerie(w http.ResponseWriter, c *http.Request) {
 	w.Header().Set("Access-Control-Allow-Methods", "GET, POST, OPTIONS, PUT, DELETE")
 	w.Header().Set("Access-Control-Allow-Headers", "Content-Type, Authorization")
 
+	// Responde ao pré-flight request (OPTIONS)
+	if c.Method == http.MethodOptions {
+		w.WriteHeader(http.StatusNoContent)
+		return
+	}
+
 	// validar
 	if !ValidarRequisicao(c) {
 		json.NewEncoder(w).Encode(map[string]string{"error": "invalid resquest"})
@@ -187,6 +240,12 @@ func HandlerAssistirFilme(w http.ResponseWriter, c *http.Request) {
 	w.Header().Set("Access-Control-Allow-Origin", "http://localhost:8000") // Altere para o domínio necessário
 	w.Header().Set("Access-Control-Allow-Methods", "GET, POST, OPTIONS, PUT, DELETE")
 	w.Header().Set("Access-Control-Allow-Headers", "Content-Type, Authorization")
+
+	// Responde ao pré-flight request (OPTIONS)
+	if c.Method == http.MethodOptions {
+		w.WriteHeader(http.StatusNoContent)
+		return
+	}
 
 	// validar
 	if !ValidarRequisicao(c) {
@@ -207,6 +266,12 @@ func HandlerAssistirEpisodio(w http.ResponseWriter, c *http.Request) {
 	w.Header().Set("Access-Control-Allow-Methods", "GET, POST, OPTIONS, PUT, DELETE")
 	w.Header().Set("Access-Control-Allow-Headers", "Content-Type, Authorization")
 
+	// Responde ao pré-flight request (OPTIONS)
+	if c.Method == http.MethodOptions {
+		w.WriteHeader(http.StatusNoContent)
+		return
+	}
+
 	// validar
 	if !ValidarRequisicao(c) {
 		json.NewEncoder(w).Encode(map[string]string{"error": "invalid resquest"})
@@ -214,12 +279,6 @@ func HandlerAssistirEpisodio(w http.ResponseWriter, c *http.Request) {
 		// retornar
 		json.NewEncoder(w).Encode(scrapper.GetSerieLinkVideo(mux.Vars(c)["episodio"]))
 	}
-}
-
-// Responde ao pré-flight request (OPTIONS)
-if r.Method == http.MethodOptions {
-	w.WriteHeader(http.StatusNoContent)
-	return
 }
 
 func main() {
